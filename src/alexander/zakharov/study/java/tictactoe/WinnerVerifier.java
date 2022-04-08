@@ -21,11 +21,15 @@ package alexander.zakharov.study.java.tictactoe;
  * @author Aleksandr Zakharov
  * @link http://alexander.zakharov.org/java-oop
  */
-public final class Launcher {
+public class WinnerVerifier {
 
-    public static void main(final String[] args) {
-        Game game =
-            new Game(new DataPrinter(), new UserMove(), new ComputerMove(), new WinnerVerifier(), new DrawVerifier());
-        game.play();
+    public boolean isUserWin(final GameTable gameTable) {
+
+        return false;
+    }
+
+    public boolean isComputerWin(final GameTable gameTable) {
+
+        return false;
     }
 }
