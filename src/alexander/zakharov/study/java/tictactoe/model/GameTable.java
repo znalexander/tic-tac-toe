@@ -17,6 +17,8 @@
 
 package alexander.zakharov.study.java.tictactoe.model;
 
+import java.util.Arrays;
+
 /**
  * @author Aleksandr Zakharov
  * @link http://alexander.zakharov.org/java-oop
@@ -39,5 +41,19 @@ public class GameTable {
 
     public void setSing(final Cell cell, final char sing) {
         table[cell.getRow()][cell.getCol()] = sing;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("GameTable{");
+        sb.append("table=");
+        for (int i = 0; i < table.length; i++) {
+            sb.append(Arrays.toString(table[i]));
+            if (i < table.length - 1) {
+                sb.append(' ');
+            }
+        }
+        sb.append('}');
+        return sb.toString();
     }
 }
