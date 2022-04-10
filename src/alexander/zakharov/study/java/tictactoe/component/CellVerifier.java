@@ -24,9 +24,9 @@ import alexander.zakharov.study.java.tictactoe.model.GameTable;
  * @author Aleksandr Zakharov
  * @link http://alexander.zakharov.org/java-oop
  */
-public class DrawVerifier {
+public class CellVerifier {
 
-    public boolean isDraw(final GameTable gameTable) {
+    public boolean allCellsFilled(final GameTable gameTable) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (gameTable.isCellEmpty(new Cell(i, j))) {
