@@ -15,15 +15,12 @@
  *
  */
 
-package alexander.zakharov.study.java.tictactoe;
+package alexander.zakharov.study.java.tictactoe.model;
 
 /**
  * @author Aleksandr Zakharov
  * @link http://alexander.zakharov.org/java-oop
  */
-public class UserMove {
+public class GameTable {
 
-    public void make(final GameTable gameTable) {
-
-    }
 }

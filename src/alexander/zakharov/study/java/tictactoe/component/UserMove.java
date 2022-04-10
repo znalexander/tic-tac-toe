@@ -15,21 +15,17 @@
  *
  */
 
-package alexander.zakharov.study.java.tictactoe;
+package alexander.zakharov.study.java.tictactoe.component;
+
+import alexander.zakharov.study.java.tictactoe.model.GameTable;
 
 /**
  * @author Aleksandr Zakharov
  * @link http://alexander.zakharov.org/java-oop
  */
-public class WinnerVerifier {
+public class UserMove {
 
-    public boolean isUserWin(final GameTable gameTable) {
+    public void make(final GameTable gameTable) {
 
-        return false;
-    }
-
-    public boolean isComputerWin(final GameTable gameTable) {
-
-        return false;
     }
 }

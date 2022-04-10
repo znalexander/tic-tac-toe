@@ -17,6 +17,13 @@
 
 package alexander.zakharov.study.java.tictactoe;
 
+import alexander.zakharov.study.java.tictactoe.component.ComputerMove;
+import alexander.zakharov.study.java.tictactoe.component.DataPrinter;
+import alexander.zakharov.study.java.tictactoe.component.DrawVerifier;
+import alexander.zakharov.study.java.tictactoe.component.Game;
+import alexander.zakharov.study.java.tictactoe.component.UserMove;
+import alexander.zakharov.study.java.tictactoe.component.WinnerVerifier;
+
 /**
  * @author Aleksandr Zakharov
  * @link http://alexander.zakharov.org/java-oop
