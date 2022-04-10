@@ -18,39 +18,31 @@
 package alexander.zakharov.study.java.tictactoe.component;
 
 import alexander.zakharov.study.java.tictactoe.model.Cell;
-import alexander.zakharov.study.java.tictactoe.model.GameTable;
 
 /**
  * @author Aleksandr Zakharov
  * @link http://alexander.zakharov.org/java-oop
  */
-public class DataPrinter {
+public class CellNumberConverter {
 
-    private final CellNumberConverter cellNumberConverter;
+    private final char[][] gamepad = {
+        {'7', '8', '9'},
+        {'4', '5', '6'},
+        {'1', '2', '3'}
+    };
 
-    public DataPrinter(final CellNumberConverter cellNumberConverter) {
-        this.cellNumberConverter = cellNumberConverter;
+    public Cell toCell(final char number) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (gamepad[i][j] == number) {
+                    return new Cell(i, j);
+                }
+            }
+        }
+        return null;
     }
 
-    public void printMappingTable() {
-        for (int i = 0; i < 3; i++) {
-            System.out.println("-------------");
-            for (int j = 0; j < 3; j++) {
-                System.out.print("| " + cellNumberConverter.toNumber(new Cell(i, j)) + ' ');
-            }
-            System.out.println('|');
-        }
-        System.out.println("-------------");
-    }
-
-    public void printGameTable(final GameTable gameTable) {
-        for (int i = 0; i < 3; i++) {
-            System.out.println("-------------");
-            for (int j = 0; j < 3; j++) {
-                System.out.print("| " + gameTable.getSing(new Cell(i, j)) + ' ');
-            }
-            System.out.println('|');
-        }
-        System.out.println("-------------");
+    public char toNumber(final Cell cell) {
+        return gamepad[cell.getRow()][cell.getCol()];
     }
 }

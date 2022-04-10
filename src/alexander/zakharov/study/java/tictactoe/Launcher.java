@@ -17,6 +17,7 @@
 
 package alexander.zakharov.study.java.tictactoe;
 
+import alexander.zakharov.study.java.tictactoe.component.CellNumberConverter;
 import alexander.zakharov.study.java.tictactoe.component.CellVerifier;
 import alexander.zakharov.study.java.tictactoe.component.ComputerMove;
 import alexander.zakharov.study.java.tictactoe.component.DataPrinter;
@@ -31,8 +32,13 @@ import alexander.zakharov.study.java.tictactoe.component.WinnerVerifier;
 public final class Launcher {
 
     public static void main(final String[] args) {
-        Game game =
-            new Game(new DataPrinter(), new UserMove(), new ComputerMove(), new WinnerVerifier(), new CellVerifier());
+        final CellNumberConverter cellNumberConverter = new CellNumberConverter();
+        final Game game =
+            new Game(new DataPrinter(cellNumberConverter),
+                new UserMove(cellNumberConverter),
+                new ComputerMove(),
+                new WinnerVerifier(),
+                new CellVerifier());
         game.play();
     }
 }
