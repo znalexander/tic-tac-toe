@@ -21,23 +21,22 @@ package alexander.zakharov.study.java.tictactoe.model;
  * @author Aleksandr Zakharov
  * @link http://alexander.zakharov.org/java-oop
  */
-public class GameTable {
+public class Cell {
 
-    private final char[][] table = {
-        {' ', ' ', ' '},
-        {' ', ' ', ' '},
-        {' ', ' ', ' '}
-    };
+    private final int row;
 
-    public boolean isCellEmpty(final Cell cell) {
-        return table[cell.getRow()][cell.getCol()] == ' ';
+    private final int col;
+
+    public Cell(final int row, final int col) {
+        this.row = row;
+        this.col = col;
     }
 
-    public char getSing(final Cell cell) {
-        return table[cell.getRow()][cell.getCol()];
+    public int getRow() {
+        return row;
     }
 
-    public void setSing(final Cell cell, final char sing) {
-        table[cell.getRow()][cell.getCol()] = sing;
+    public int getCol() {
+        return col;
     }
 }
