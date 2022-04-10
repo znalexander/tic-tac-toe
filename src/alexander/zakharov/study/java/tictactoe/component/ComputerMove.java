@@ -32,7 +32,7 @@ public class ComputerMove {
             final Cell randomCell = new Cell(new Random().nextInt(3), new Random().nextInt(3));
             if (gameTable.isCellEmpty(randomCell)) {
                 gameTable.setSing(randomCell, 'O');
-                break;
+                return;
             }
         }
     }
