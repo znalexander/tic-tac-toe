@@ -17,6 +17,8 @@
 
 package alexander.zakharov.study.java.tictactoe.component;
 
+import java.util.Scanner;
+import alexander.zakharov.study.java.tictactoe.model.Cell;
 import alexander.zakharov.study.java.tictactoe.model.GameTable;
 
 /**
@@ -25,7 +27,40 @@ import alexander.zakharov.study.java.tictactoe.model.GameTable;
  */
 public class UserMove {
 
-    public void make(final GameTable gameTable) {
+    private final char[][] gamepad = {
+        {'7', '8', '9'},
+        {'4', '5', '6'},
+        {'1', '2', '3'}
+    };
 
+    public void make(final GameTable gameTable) {
+        while (true) {
+            final Cell cellEnteredByTheUser = getUserCell();
+            if (gameTable.isCellEmpty(cellEnteredByTheUser)) {
+                gameTable.setSing(cellEnteredByTheUser, 'X');
+                return;
+            } else {
+                System.out.println("Can't make a move, because the cell is not free! Try again!");
+            }
+        }
+    }
+
+    private Cell getUserCell() {
+        while (true) {
+            System.out.println("Please type number between 1 and 9:");
+            final String enteredCell = new Scanner(System.in).nextLine();
+            if (enteredCell.length() == 1) {
+                final char ch = enteredCell.charAt(0);
+                if (ch > '0' && ch <= '9') {
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++) {
+                            if (gamepad[i][j] == ch) {
+                                return new Cell(i, j);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
