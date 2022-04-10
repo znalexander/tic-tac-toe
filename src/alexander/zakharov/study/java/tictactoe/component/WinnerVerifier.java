@@ -17,6 +17,7 @@
 
 package alexander.zakharov.study.java.tictactoe.component;
 
+import alexander.zakharov.study.java.tictactoe.model.Cell;
 import alexander.zakharov.study.java.tictactoe.model.GameTable;
 
 /**
@@ -26,12 +27,51 @@ import alexander.zakharov.study.java.tictactoe.model.GameTable;
 public class WinnerVerifier {
 
     public boolean isUserWin(final GameTable gameTable) {
-
-        return false;
+        return isWinner(gameTable, 'X');
     }
 
     public boolean isComputerWin(final GameTable gameTable) {
+        return isWinner(gameTable, 'O');
+    }
 
+    private boolean isWinner(final GameTable gameTable, final char sing) {
+        return isWinnerByRows(gameTable, sing) ||
+            isWinnerByCols(gameTable, sing) ||
+            isWinnerByMainDiagonal(gameTable, sing) ||
+            isWinnerBySecondaryDiagonal(gameTable, sing);
+    }
+
+    private boolean isWinnerByRows(final GameTable gameTable, final char sing) {
+        for (int i = 0; i < 3; i++) {
+            if (gameTable.getSing(new Cell(i, 0)) == gameTable.getSing(new Cell(i, 1))
+                && gameTable.getSing(new Cell(i, 1)) == gameTable.getSing(new Cell(i, 2))
+                && gameTable.getSing(new Cell(i, 2)) == sing) {
+                return true;
+            }
+        }
         return false;
+    }
+
+    private boolean isWinnerByCols(final GameTable gameTable, final char sing) {
+        for (int i = 0; i < 3; i++) {
+            if (gameTable.getSing(new Cell(0, i)) == gameTable.getSing(new Cell(1, i))
+                && gameTable.getSing(new Cell(1, i)) == gameTable.getSing(new Cell(2, i))
+                && gameTable.getSing(new Cell(2, i)) == sing) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean isWinnerByMainDiagonal(final GameTable gameTable, final char sing) {
+        return gameTable.getSing(new Cell(0, 0)) == gameTable.getSing(new Cell(1, 1))
+            && gameTable.getSing(new Cell(1, 1)) == gameTable.getSing(new Cell(2, 2))
+            && gameTable.getSing(new Cell(2, 2)) == sing;
+    }
+
+    private boolean isWinnerBySecondaryDiagonal(final GameTable gameTable, final char sing) {
+        return gameTable.getSing(new Cell(0, 2)) == gameTable.getSing(new Cell(1, 1))
+            && gameTable.getSing(new Cell(1, 1)) == gameTable.getSing(new Cell(2, 0))
+            && gameTable.getSing(new Cell(2, 0)) == sing;
     }
 }
