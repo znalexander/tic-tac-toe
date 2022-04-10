@@ -23,26 +23,9 @@ import alexander.zakharov.study.java.tictactoe.model.Cell;
  * @author Aleksandr Zakharov
  * @link http://alexander.zakharov.org/java-oop
  */
-public class CellNumberConverter {
+public interface CellNumberConverter {
 
-    private final char[][] gamepad = {
-        {'7', '8', '9'},
-        {'4', '5', '6'},
-        {'1', '2', '3'}
-    };
+    Cell toCell(char number);
 
-    public Cell toCell(final char number) {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (gamepad[i][j] == number) {
-                    return new Cell(i, j);
-                }
-            }
-        }
-        return null;
-    }
-
-    public char toNumber(final Cell cell) {
-        return gamepad[cell.getRow()][cell.getCol()];
-    }
+    char toNumber(Cell cell);
 }
