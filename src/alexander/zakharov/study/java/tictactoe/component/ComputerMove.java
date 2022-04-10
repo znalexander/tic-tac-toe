@@ -17,6 +17,8 @@
 
 package alexander.zakharov.study.java.tictactoe.component;
 
+import java.util.Random;
+import alexander.zakharov.study.java.tictactoe.model.Cell;
 import alexander.zakharov.study.java.tictactoe.model.GameTable;
 
 /**
@@ -26,6 +28,12 @@ import alexander.zakharov.study.java.tictactoe.model.GameTable;
 public class ComputerMove {
 
     public void make(final GameTable gameTable) {
-
+        while (true) {
+            final Cell randomCell = new Cell(new Random().nextInt(3), new Random().nextInt(3));
+            if (gameTable.isCellEmpty(randomCell)) {
+                gameTable.setSing(randomCell, 'O');
+                break;
+            }
+        }
     }
 }
