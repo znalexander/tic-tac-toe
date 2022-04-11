@@ -24,7 +24,7 @@ import alexander.zakharov.study.java.tictactoe.component.DataPrinter;
 import alexander.zakharov.study.java.tictactoe.component.Game;
 import alexander.zakharov.study.java.tictactoe.component.UserMove;
 import alexander.zakharov.study.java.tictactoe.component.WinnerVerifier;
-import alexander.zakharov.study.java.tictactoe.component.keypad.TerminalNumericKeypadCellNumberConverter;
+import alexander.zakharov.study.java.tictactoe.component.keypad.DesktopNumericKeypadCellNumberConverter;
 
 /**
  * @author Aleksandr Zakharov
@@ -33,7 +33,7 @@ import alexander.zakharov.study.java.tictactoe.component.keypad.TerminalNumericK
 public final class Launcher {
 
     public static void main(final String[] args) {
-        final CellNumberConverter cellNumberConverter = new TerminalNumericKeypadCellNumberConverter();
+        final CellNumberConverter cellNumberConverter = new DesktopNumericKeypadCellNumberConverter();
         final Game game =
             new Game(new DataPrinter(cellNumberConverter),
                 new UserMove(cellNumberConverter),
