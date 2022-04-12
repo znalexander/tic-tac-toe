@@ -19,6 +19,7 @@
 # @author Aleksandr Zakharov
 # @email  a.zakharov.n@gmail.com
 #####################################################################################################################
+cd "$(dirname "$0")" || exit
 
 java -jar ${project.build.finalName}.jar
 echo "Press Enter to continue . . . "
