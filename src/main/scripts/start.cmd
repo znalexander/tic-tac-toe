@@ -15,8 +15,8 @@
 @rem ###################################################################################################################
 @rem The cmd script to start the tic-tac-toe game for Windows systems
 @rem
-@rem @author devonline
-@rem @email  devonline.academy@gmail.com
+@rem @author Aleksandr Zakharov
+@rem @email  a.zakharov.n@gmail.com
 @rem ###################################################################################################################
 @echo off
 
